@@ -1,6 +1,7 @@
 import { MyObject } from "@/types/common";
 import React, { useState } from "react";
 import "./gifContainer.css";
+import uuid from "react-uuid";
 
 export default function GifContainer({
   results,
@@ -13,7 +14,7 @@ export default function GifContainer({
   return (
     <div className="gifs-container">
         {filteredResults.map((result) => (
-          <img key={result.id} src={result.images.fixed_height.url} alt={result.title}/>
+          <img key={ uuid()} src={result.images.fixed_height.url} alt={result.title}/>
         ))}
       </div>
   );

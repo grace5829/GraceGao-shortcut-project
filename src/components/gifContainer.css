@@ -1,25 +1,125 @@
+.gifs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
 
-  .gifs-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-  }
-  
+.gifs-container img {
+  flex: 1 1 calc(15% - 10px);
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 800px) {
   .gifs-container img {
-    flex: 1 1 calc(15% - 10px);
-    max-width: 100%;
-    height: auto;
+    flex: 1 1 calc(50% - 10px);
   }
-  
-  @media (max-width: 800px) {
-    .gifs-container img {
-      flex: 1 1 calc(50% - 10px);
-    }
+}
+
+@media (max-width: 500px) {
+  .gifs-container img {
+    flex: 1 1 100%;
   }
-  
-  @media (max-width: 500px) {
-    .gifs-container img {
-      flex: 1 1 100%;
-    }
+}
+
+
+/* .button {
+  width: 200px;
+  height: 49.5px;
+  background-color: blue;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.button:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  animation-name: border-top-right-white;
+}
+
+.button:hover:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  animation: border-bottom-left 5s  ;
+}
+
+@keyframes border-top-right-white {
+  0% {
+    width: 0px;
+    height: 0px;
   }
+  25% {
+    width: 200px;
+    height: 0px;
+  }
+  50% {
+    width: 200px;
+    height: 48px;
+  }
+  100% {
+    width: 200px;
+    height: 48px;
+  }
+}
+@keyframes border-top-right-green {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  25% {
+    width: 200px;
+    height: 0px;
+  }
+  50% {
+    width: 200px;
+    height: 48px;
+  }
+  100% {
+    width: 200px;
+    height: 48px;
+  }
+}
+@keyframes border-bottom-left {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  50% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  50.1% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  75% {
+    width: 200px;
+    height: 0px;
+    opacity: 1;
+
+  }
+  100% {
+    width: 200px;
+    height: 48px;
+    opacity: 1;
+
+  }
+} */

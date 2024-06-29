@@ -1,6 +1,8 @@
 "use client";
 import { MyObject } from "@/types/common";
 import React, { useEffect, useState } from "react";
+import "./gifContainer.css";
+import { motion } from "framer-motion"
 
 const apikey = process.env.NEXT_PUBLIC_GIPHY_API_KEY;
 
@@ -53,6 +55,13 @@ export default function SearchButton({
     fetchData(searchInput, selectedRating, 0);
   };
 
+  const handleKeyDown = (event:React.KeyboardEvent<HTMLInputElement>) => {
+    console.log(event.key)
+    if (event.key === 'Enter') {
+        setOffset(0);
+        setResults([]);
+        fetchData(searchInput, selectedRating, 0);    }
+  };
   const handleRatingChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedRating(e.target.value);
     setOffset(0);
@@ -92,15 +101,23 @@ const loadMore = async () => {
         placeholder="Search here"
         onChange={handleChange}
         value={searchInput}
+        onKeyDown={(e)=>handleKeyDown(e)}
       />
-      <button
-        id="search-button"
-        onClick={() => {
-          handleSubmit();
+      <div className='button-border'>
+
+      <motion.button
+        className="button"
+        onClick={handleSubmit}
+
+        whileHover={{
+            border:'2px solid yellow'
         }}
-      >
+        >
         Enter
-      </button>
+
+      </motion.button>
+          </div>
+        
       <div>
         GIF rating:
         <select onChange={(e) => handleRatingChange(e)} value={selectedRating}>
@@ -111,6 +128,7 @@ const loadMore = async () => {
           ))}
         </select>
       </div>
+      
     </div>
   );
 }

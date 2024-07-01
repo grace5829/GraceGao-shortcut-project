@@ -1,0 +1,9 @@
+.container{
+    height: 100vh;
+}
+.giphy-logo{
+    width: 100px;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+  }
